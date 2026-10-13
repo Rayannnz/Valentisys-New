@@ -1,5 +1,6 @@
 "use client";
 
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 import { useEffect, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import {
@@ -21,7 +22,7 @@ import { EXPO_OUT } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
 const SLIDE_SECONDS = 7;
-const SHADER_COLORS = ["#061236", "#10347e", "#0755e9", "#2569e6", "#5e93ff"];
+const SHADER_COLORS = ["#130a45", "#301a7a", "#5a30d9", "#7146db", "#9a74ee"];
 const SPARKLINE = "M2 54 C 28 52, 44 44, 70 45 S 108 34, 134 35 S 172 22, 198 19 S 226 9, 238 6";
 
 // Copy not present in site.ts; derived locally per DESIGN.md.
@@ -166,10 +167,10 @@ function HeroCard({ card }: { card: HeroSlide["card"] }) {
           <div className="flex items-center gap-6">
             <div
               aria-hidden
-              className="relative flex aspect-[3/4] w-40 shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-ink-gradient p-4 pl-5 shadow-[0_24px_48px_-16px_rgba(2,8,22,0.7)]"
+              className="relative flex aspect-[3/4] w-40 shrink-0 flex-col justify-between overflow-hidden rounded-xl border border-white/10 bg-ink-gradient p-4 pl-5 shadow-[0_24px_48px_-16px_rgba(10,6,24,0.7)]"
             >
               <span className="absolute inset-y-0 left-0 w-1.5 bg-white/10" />
-              <span className="text-[10px] font-extrabold tracking-[-0.02em] text-white/80">{site.name}</span>
+              <Logo variant="dark" alt="" className="h-4" priority />
               <span>
                 <span className="block h-1 w-8 rounded-full bg-brand-400" />
                 <span className="mt-3 block text-[13px] leading-snug font-bold text-white">{card.title}</span>
@@ -261,7 +262,7 @@ export function Hero() {
 
   const mx = useMotionValue(-9999);
   const my = useMotionValue(-9999);
-  const glow = useMotionTemplate`radial-gradient(600px circle at ${mx}px ${my}px, rgba(142,197,255,0.16), transparent 70%)`;
+  const glow = useMotionTemplate`radial-gradient(600px circle at ${mx}px ${my}px, rgba(201,176,248,0.16), transparent 70%)`;
 
   useEffect(() => {
     const onVisibility = () => setDocHidden(document.hidden);
@@ -322,11 +323,11 @@ export function Hero() {
       </motion.div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(6,18,54,0.82)_0%,rgba(6,18,54,0.5)_45%,rgba(6,18,54,0.08)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,rgba(19,10,69,0.82)_0%,rgba(19,10,69,0.5)_45%,rgba(19,10,69,0.08)_100%)]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(0deg,rgba(6,18,54,0.65),transparent)]"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-56 bg-[linear-gradient(0deg,rgba(19,10,69,0.65),transparent)]"
       />
       <motion.div aria-hidden className="pointer-events-none absolute inset-0" style={{ background: glow }} />
 

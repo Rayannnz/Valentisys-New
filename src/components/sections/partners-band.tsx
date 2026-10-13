@@ -44,7 +44,7 @@ export function PartnersBand() {
               <div className="flex h-full items-center gap-4 rounded-2xl border border-white/15 bg-white/10 px-7 py-6 backdrop-blur transition duration-500 ease-expo hover:-translate-y-1 hover:bg-white/15">
                 <span
                   aria-hidden
-                  className="grid size-12 shrink-0 place-items-center rounded-xl bg-white text-xl font-extrabold text-brand-700 shadow-[0_8px_24px_-12px_rgba(2,8,22,0.5)]"
+                  className="grid size-12 shrink-0 place-items-center rounded-xl bg-white text-xl font-extrabold text-brand-700 shadow-[0_8px_24px_-12px_rgba(10,6,24,0.5)]"
                 >
                   {p.mono}
                 </span>

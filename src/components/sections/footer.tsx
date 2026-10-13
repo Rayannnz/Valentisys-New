@@ -1,5 +1,6 @@
 "use client";
 
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
@@ -74,10 +75,7 @@ export function Footer() {
 
         <div className="mt-16 grid gap-10 border-t border-white/10 pt-12 md:mt-20 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="text-3xl font-extrabold tracking-[-0.04em]">
-              {WORDMARK}
-              <sup className="ml-0.5 text-xs font-medium text-white/50">®</sup>
-            </p>
+            <Logo variant="dark" className="h-11" />
             <ul className="mt-6 space-y-3 text-sm text-white/80">
               <li>
                 <a href={TEL} className="inline-flex items-center gap-3 transition-colors duration-300 hover:text-white">

@@ -1,9 +1,10 @@
 "use client";
 
+import { Logo } from "@/components/ui/logo";
 import Link from "next/link";
 import { Play } from "lucide-react";
 import { motion, useReducedMotion } from "motion/react";
-import { podcasts, site, type Podcast } from "@/content/site";
+import { podcasts, type Podcast } from "@/content/site";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Stagger, StaggerItem } from "@/components/ui/reveal";
 
@@ -36,9 +37,7 @@ function PodcastCard({ p }: { p: Podcast }) {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:32px_32px]" />
         <div className="absolute -right-10 -bottom-10 size-44 rounded-full bg-brand-500/50 blur-[60px]" />
 
-        <span className="absolute top-5 left-5 text-xs font-extrabold tracking-tight text-white">
-          {site.name}
-        </span>
+        <Logo variant="dark" alt="" className="absolute top-5 left-5 h-5" />
         <span className="absolute top-4 right-4 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-white uppercase backdrop-blur-sm">
           {podcasts.eyebrow} · {p.episode}
         </span>
@@ -55,7 +54,7 @@ function PodcastCard({ p }: { p: Podcast }) {
         </div>
 
         <div className="absolute bottom-5 left-5 flex items-center gap-3">
-          <span className="grid size-12 place-items-center rounded-full bg-white text-brand-600 shadow-[0_10px_30px_-10px_rgba(7,85,233,0.7)] transition-transform duration-500 ease-expo group-hover:scale-[1.08]">
+          <span className="grid size-12 place-items-center rounded-full bg-white text-brand-600 shadow-[0_10px_30px_-10px_rgba(90,48,217,0.7)] transition-transform duration-500 ease-expo group-hover:scale-[1.08]">
             <Play className="size-5 translate-x-px fill-current" strokeWidth={2} />
           </span>
           <Equalizer />

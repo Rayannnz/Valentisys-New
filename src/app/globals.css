@@ -3,40 +3,40 @@
 @theme {
   --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* Brand blues (reference: #0755E9 primary, #10347E deep) */
-  --color-brand-50: #f3f7ff;
-  --color-brand-100: #e6eeff;
-  --color-brand-200: #c7daff;
-  --color-brand-300: #9cbeff;
-  --color-brand-400: #5e93ff;
-  --color-brand-500: #2569e6;
-  --color-brand-600: #0755e9;
-  --color-brand-700: #0a46bf;
-  --color-brand-800: #10347e;
-  --color-brand-900: #0b1f4f;
-  --color-brand-950: #061236;
+  /* Brand violets sampled from the Valentisys logo (#5a30d9 primary, #221177 deep, lavender ring #bda2f6) */
+  --color-brand-50: #f6f2ff;
+  --color-brand-100: #ede4ff;
+  --color-brand-200: #dcc9ff;
+  --color-brand-300: #bda2f6;
+  --color-brand-400: #9a74ee;
+  --color-brand-500: #7146db;
+  --color-brand-600: #5a30d9;
+  --color-brand-700: #45289e;
+  --color-brand-800: #301a7a;
+  --color-brand-900: #221177;
+  --color-brand-950: #130a45;
 
   /* Neutrals */
-  --color-ink: #020816;
-  --color-ink-800: #111827;
-  --color-ink-700: #1b232e;
-  --color-ink-600: #4b5563;
-  --color-ink-500: #6b7280;
-  --color-ink-400: #9ca3af;
-  --color-ink-300: #d1d5db;
-  --color-ash: #f6f7f9;
-  --color-line: #e6e9ef;
+  --color-ink: #0a0618;
+  --color-ink-800: #15102a;
+  --color-ink-700: #1f1838;
+  --color-ink-600: #534d66;
+  --color-ink-500: #6f6a82;
+  --color-ink-400: #a19cb3;
+  --color-ink-300: #d3d0dd;
+  --color-ash: #f7f6fb;
+  --color-line: #e8e5f0;
 
   /* Highlight tints used on dark/blue surfaces */
-  --color-sky: #8ec5ff;
-  --color-sky-light: #cfe4ff;
+  --color-sky: #c9b0f8;
+  --color-sky-light: #e6d8fd;
 
   --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-  --shadow-card: 0 1px 2px rgba(2, 8, 22, 0.04), 0 8px 24px -8px rgba(2, 8, 22, 0.08);
-  --shadow-card-hover: 0 2px 4px rgba(2, 8, 22, 0.05), 0 28px 56px -20px rgba(7, 85, 233, 0.22);
-  --shadow-glow: 0 0 120px -30px rgba(7, 85, 233, 0.6);
+  --shadow-card: 0 1px 2px rgba(10, 6, 24, 0.04), 0 8px 24px -8px rgba(10, 6, 24, 0.08);
+  --shadow-card-hover: 0 2px 4px rgba(10, 6, 24, 0.05), 0 28px 56px -20px rgba(90, 48, 217, 0.22);
+  --shadow-glow: 0 0 120px -30px rgba(90, 48, 217, 0.6);
 
   --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
   --animate-float: float 7s ease-in-out infinite;
@@ -142,7 +142,7 @@
 }
 
 @utility text-gradient-brand {
-  background-image: linear-gradient(92deg, #0755e9 0%, #5e93ff 100%);
+  background-image: linear-gradient(92deg, #5a30d9 0%, #9a74ee 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -150,18 +150,18 @@
 
 /* ---------- Surfaces ---------- */
 @utility bg-brand-gradient {
-  background-color: #0755e9;
+  background-color: #5a30d9;
   background-image:
-    radial-gradient(120% 110% at 8% 0%, #10347e 0%, rgba(16, 52, 126, 0) 55%),
-    radial-gradient(90% 90% at 100% 100%, #2569e6 0%, rgba(37, 105, 230, 0) 60%),
-    linear-gradient(135deg, #0a46bf 0%, #0755e9 50%, #1f63e8 100%);
+    radial-gradient(120% 110% at 8% 0%, #301a7a 0%, rgba(48, 26, 122, 0) 55%),
+    radial-gradient(90% 90% at 100% 100%, #7146db 0%, rgba(113, 70, 219, 0) 60%),
+    linear-gradient(135deg, #45289e 0%, #5a30d9 50%, #6d3fe3 100%);
 }
 
 @utility bg-ink-gradient {
-  background-color: #0b1f4f;
+  background-color: #221177;
   background-image:
-    radial-gradient(100% 120% at 100% 0%, rgba(7, 85, 233, 0.55) 0%, rgba(7, 85, 233, 0) 55%),
-    linear-gradient(180deg, #0b1f4f 0%, #061236 100%);
+    radial-gradient(100% 120% at 100% 0%, rgba(90, 48, 217, 0.55) 0%, rgba(90, 48, 217, 0) 55%),
+    linear-gradient(180deg, #221177 0%, #130a45 100%);
 }
 
 /* Subtle film grain overlay: use on a relatively-positioned parent via an ::after */

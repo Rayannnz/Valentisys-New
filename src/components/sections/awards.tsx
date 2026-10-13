@@ -108,8 +108,8 @@ export function Awards() {
       <svg aria-hidden width="0" height="0" className="absolute">
         <defs>
           <linearGradient id={GRADIENT_ID} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#0755e9" />
-            <stop offset="1" stopColor="#9cbeff" />
+            <stop offset="0" stopColor="#5a30d9" />
+            <stop offset="1" stopColor="#bda2f6" />
           </linearGradient>
         </defs>
       </svg>

@@ -16,7 +16,7 @@ const BLOB = [
 ];
 
 const WAVE_BG =
-  "radial-gradient(circle at 32% 26%, rgba(255,255,255,0.7), rgba(255,255,255,0) 42%), linear-gradient(135deg, #9cbeff 0%, #2569e6 48%, #0a46bf 100%)";
+  "radial-gradient(circle at 32% 26%, rgba(255,255,255,0.7), rgba(255,255,255,0) 42%), linear-gradient(135deg, #bda2f6 0%, #7146db 48%, #45289e 100%)";
 
 function GlyphShape({ kind, fill }: { kind: Exclude<ServiceGlyph, "wave">; fill: string }) {
   if (kind === "spark") {
@@ -48,10 +48,10 @@ function Glyph({ kind, index }: { kind: ServiceGlyph; index: number }) {
 
   return (
     <div aria-hidden className="size-28 animate-float" style={{ animationDelay: `${index * -1.75}s` }}>
-      <div className="size-full drop-shadow-[0_18px_24px_rgba(7,85,233,0.28)] transition-transform duration-[600ms] ease-expo group-hover:rotate-[8deg] group-hover:scale-[1.04]">
+      <div className="size-full drop-shadow-[0_18px_24px_rgba(90,48,217,0.28)] transition-transform duration-[600ms] ease-expo group-hover:rotate-[8deg] group-hover:scale-[1.04]">
         {kind === "wave" ? (
           <motion.div
-            className="m-1.5 size-[100px] shadow-[inset_-10px_-14px_28px_rgba(6,18,54,0.28),inset_8px_10px_20px_rgba(255,255,255,0.3)]"
+            className="m-1.5 size-[100px] shadow-[inset_-10px_-14px_28px_rgba(19,10,69,0.28),inset_8px_10px_20px_rgba(255,255,255,0.3)]"
             style={{ borderRadius: BLOB[0], background: WAVE_BG }}
             animate={reduce ? undefined : { borderRadius: [...BLOB, BLOB[0]] }}
             transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
@@ -60,13 +60,13 @@ function Glyph({ kind, index }: { kind: ServiceGlyph; index: number }) {
           <svg viewBox="0 0 112 112" className="size-full overflow-visible">
             <defs>
               <linearGradient id={`${uid}-f`} x1="0.1" y1="0" x2="0.9" y2="1">
-                <stop offset="0" stopColor="#9cbeff" />
-                <stop offset="0.48" stopColor="#2569e6" />
-                <stop offset="1" stopColor="#0a46bf" />
+                <stop offset="0" stopColor="#bda2f6" />
+                <stop offset="0.48" stopColor="#7146db" />
+                <stop offset="1" stopColor="#45289e" />
               </linearGradient>
               <radialGradient id={`${uid}-s`} cx="0.8" cy="0.85" r="0.6">
-                <stop offset="0" stopColor="#061236" stopOpacity="0.32" />
-                <stop offset="1" stopColor="#061236" stopOpacity="0" />
+                <stop offset="0" stopColor="#130a45" stopOpacity="0.32" />
+                <stop offset="1" stopColor="#130a45" stopOpacity="0" />
               </radialGradient>
               <radialGradient id={`${uid}-h`} cx="0.32" cy="0.26" r="0.55">
                 <stop offset="0" stopColor="#ffffff" stopOpacity="0.72" />

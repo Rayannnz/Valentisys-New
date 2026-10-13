@@ -1,8 +1,9 @@
 "use client";
 
+import { Logo } from "@/components/ui/logo";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
-import { site, webinar } from "@/content/site";
+import { webinar } from "@/content/site";
 import { Button } from "@/components/ui/button";
 import { MaskedTextReveal } from "@/components/ui/text-reveal-mask";
 import { Reveal, Stagger, StaggerItem } from "@/components/ui/reveal";
@@ -31,7 +32,7 @@ export function WebinarBanner() {
 
           <div className="relative lg:col-span-7">
             <div className="flex items-center gap-4 text-lg">
-              <span className="font-extrabold tracking-tight">{site.name}</span>
+              <Logo variant="dark" className="h-7" />
               <span aria-hidden className="text-white/40">
                 ×
               </span>
@@ -90,7 +91,7 @@ export function WebinarBanner() {
                 >
                   <div
                     aria-hidden
-                    className="mx-auto grid size-24 place-items-center rounded-full bg-[linear-gradient(135deg,#0755e9,#8ec5ff)] text-2xl font-extrabold ring-4 ring-white/10 md:size-28"
+                    className="mx-auto grid size-24 place-items-center rounded-full bg-[linear-gradient(135deg,#5a30d9,#c9b0f8)] text-2xl font-extrabold ring-4 ring-white/10 md:size-28"
                   >
                     {s.initials}
                   </div>

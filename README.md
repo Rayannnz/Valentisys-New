@@ -1,6 +1,6 @@
 # Valentisys — premium B2B services landing page
 
-Single-page marketing site for an AI-native technology services company, modelled on the feel of tkxel.com: deep electric-blue bands, generous white sections, confident 800-weight headlines, restrained scroll animation.
+Single-page marketing site for an AI-native technology services company, modelled on the feel of tkxel.com: deep violet bands drawn from the Valentisys logo, generous white sections, confident 800-weight headlines, restrained scroll animation.
 
 ## Run
 
@@ -35,7 +35,7 @@ npm run build && npm start
 
 ## Customising
 
-- **Brand name / copy:** edit `src/content/site.ts` only; components never hard-code text.
+- **Brand name / copy:** edit `src/content/site.ts` only; components never hard-code text. Logo files live in `public/logo-*.png` and the favicon is `src/app/icon.png`.
 - **Colors:** adjust the `--color-brand-*` scale in `globals.css`; bands use `bg-brand-gradient` and `bg-ink-gradient`.
 - **Motion intensity:** `Reveal`/`Stagger` defaults are in `src/components/ui/reveal.tsx`; the hero shader `speed` and the marquee `duration` are props on those components.
 - **Form:** `cta-contact.tsx` validates client-side and shows a success state; wire `onSubmit` to your CRM or a route handler.

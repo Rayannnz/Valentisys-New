@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScro
 import { ArrowRight, ArrowUpRight, ChevronDown, Menu, Search, X } from "lucide-react";
 import { nav, services, site, type NavChild } from "@/content/site";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { EXPO_OUT } from "@/components/ui/reveal";
 import { cn } from "@/lib/utils";
 
@@ -15,11 +16,12 @@ const LANG = "EN";
 const linkClass =
   "relative inline-flex items-center gap-1 px-3.5 py-2 text-[15px] font-medium after:absolute after:inset-x-3.5 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-500 after:ease-expo hover:after:scale-x-100";
 
-function Wordmark() {
+function Wordmark({ solid }: { solid: boolean }) {
   return (
-    <Link href="/" aria-label={`${site.name} home`} className="text-2xl font-extrabold tracking-[-0.04em]">
-      {site.name}
-      <sup className="-top-[1.1em] ml-0.5 text-[9px] font-semibold">®</sup>
+    <Link href="/" aria-label={`${site.name} home`} className="inline-flex items-center">
+      {/* Both variants are rendered and toggled so the swap on scroll never flickers. */}
+      <Logo variant="dark" className={cn("h-9 md:h-10", solid && "hidden")} priority />
+      <Logo variant="light" className={cn("h-9 md:h-10", !solid && "hidden")} priority />
     </Link>
   );
 }
@@ -179,7 +181,7 @@ export function Navbar() {
         )}
       >
         <div className="container-x flex h-[72px] items-center justify-between md:h-20">
-          <Wordmark />
+          <Wordmark solid={solid} />
 
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex items-center gap-1">
@@ -253,7 +255,7 @@ export function Navbar() {
             transition={{ duration: 0.7, ease: EXPO_OUT }}
           >
             <div className="container-x flex h-[72px] shrink-0 items-center justify-between md:h-20">
-              <Wordmark />
+              <Wordmark solid={false} />
               <button
                 type="button"
                 aria-label="Close menu"

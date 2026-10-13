@@ -1,6 +1,6 @@
 # Valentisys landing page — design brief
 
-Premium B2B services landing page (reference feel: tkxel.com — deep electric-blue brand, generous white sections, black mega-footer, confident 800-weight headlines, restrained motion). Target quality: a $10k agency build. Everything below is binding for every section.
+Premium B2B services landing page (reference feel: tkxel.com — deep violet brand taken from the Valentisys logo, generous white sections, black mega-footer, confident 800-weight headlines, restrained motion). Target quality: a $10k agency build. Everything below is binding for every section.
 
 ## Stack (already installed — do not add packages)
 
@@ -18,7 +18,7 @@ All copy lives in `src/content/site.ts`. Import the named exports (`site`, `nav`
 
 ## Tokens (Tailwind utilities available)
 
-Colors: `brand-50…950` (600 = `#0755e9` primary, 800 = `#10347e` deep, 900 = `#0b1f4f` navy), `ink` (#020816 text), `ink-800/700/600/500/400/300`, `ash` (#f6f7f9 alt background), `line` (#e6e9ef borders), `sky` / `sky-light` (highlight tints for dark surfaces).
+Colors: `brand-50…950` (600 = `#5a30d9` primary, 800 = `#301a7a` deep, 900 = `#221177` indigo, 300 = `#bda2f6` lavender ring), `ink` (#0a0618 text), `ink-800/700/600/500/400/300`, `ash` (#f7f6fb alt background), `line` (#e8e5f0 borders), `sky` / `sky-light` (highlight tints for dark surfaces).
 
 Surfaces: `bg-brand-gradient` (blue band), `bg-ink-gradient` (navy/black band), `noise` (adds subtle grain via ::after; parent must be `relative`), `card` (white rounded-3xl bordered with soft shadow) + `card-hover` (lift + blue-tinted shadow), `pill` (tag chip), `mask-fade-x`, `hide-scrollbar`.
 
@@ -35,6 +35,7 @@ Radii: cards `rounded-3xl` (24px), small tiles `rounded-2xl`, buttons/pills `rou
 - `Reveal`, `Stagger`, `StaggerItem` (`@/components/ui/reveal`): fade-rise on scroll (once, expo-out). Wrap cards in `Stagger` + `StaggerItem` for 90ms cascades. `EXPO_OUT` is exported for custom transitions.
 - `CountUp` (`@/components/ui/count-up`): `{ value, prefix?, suffix?, decimals?, duration? }` counts when in view.
 - `Marquee` (`@/components/ui/marquee`): CSS infinite marquee; pass children, `duration`, `reverse`, `gap`.
+- `Logo` (`@/components/ui/logo`): the brand logo as an image; `variant` = `light` (black wordmark, white surfaces) | `dark` (white wordmark, dark surfaces) | `mark` (V only); size with an `h-*` class; pass `alt=""` when decorative. Never render the brand name as text.
 - `Button` (`@/components/ui/button`): `variant` = `primary | white | outline | outline-white | ghost | ghost-white`, `size` = `sm | md | lg`, `arrow` (default true), `href` renders a Link.
 
 ## Motion rules (the "premium" is in the restraint)

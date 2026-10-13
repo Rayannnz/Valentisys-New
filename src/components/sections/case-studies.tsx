@@ -16,7 +16,7 @@ const VIEW_LABEL = "View case study";
 const PANEL: Record<CaseStudy["accent"], string> = {
   blue: "noise bg-brand-gradient text-white",
   navy: "noise bg-ink-gradient text-white",
-  sky: "bg-[linear-gradient(135deg,#e6eeff,#cfe4ff)] text-ink",
+  sky: "bg-[linear-gradient(135deg,#ede4ff,#e6d8fd)] text-ink",
 };
 
 const DARK_PILL =
@@ -70,7 +70,7 @@ function CaseCard({ study }: { study: CaseStudy }) {
           <figcaption className="mt-auto flex items-center gap-3">
             <span
               aria-hidden
-              className="grid size-11 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,#0755e9,#5e93ff)] text-sm font-bold text-white"
+              className="grid size-11 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,#5a30d9,#9a74ee)] text-sm font-bold text-white"
             >
               {study.author.initials}
             </span>
