@@ -310,11 +310,11 @@ export function CtaContact() {
       />
 
       <div className="container-x relative z-10 grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:sticky lg:top-32 lg:col-span-5">
+        <div className="lg:sticky lg:top-32 lg:col-span-6">
           <SectionHeading tone="dark" eyebrow={cta.eyebrow} title={TITLE} description={cta.description} />
           <TestimonialRotator />
         </div>
-        <Reveal delay={0.1} className="lg:col-span-7">
+        <Reveal delay={0.1} className="lg:col-span-6">
           <ContactForm />
         </Reveal>
       </div>
