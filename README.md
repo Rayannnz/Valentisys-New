@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Valentisys — premium B2B services landing page
 
-## Getting Started
+Single-page marketing site for an AI-native technology services company, modelled on the feel of tkxel.com: deep electric-blue bands, generous white sections, confident 800-weight headlines, restrained scroll animation.
 
-First, run the development server:
+## Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000. Production check:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build && npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Stack
 
-## Learn More
+- Next.js 16 (App Router) · React 19 · TypeScript
+- Tailwind CSS v4 — every token (colors, type scale, surfaces, motion) lives in `src/app/globals.css`
+- `motion` (Framer Motion successor) for entrances, parallax and hover
+- Lenis for inertial smooth scrolling (`src/components/smooth-scroll.tsx`)
+- `@paper-design/shaders-react` MeshGradient for the live hero background
+- 21st.dev `MaskedTextReveal` (soralabs/text-reveal-mask) for masked headline reveals
 
-To learn more about Next.js, take a look at the following resources:
+## Where things live
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Path | Purpose |
+| --- | --- |
+| `src/content/site.ts` | All copy, nav, stats, case studies, podcasts, insights, footer. Change the brand here. |
+| `src/components/ui/` | Shared primitives: `SectionHeading`, `Reveal`/`Stagger`, `CountUp`, `Marquee`, `Button`, `MaskedTextReveal` |
+| `src/components/sections/` | One file per page section, mounted in order in `src/app/page.tsx` |
+| `DESIGN.md` | The design brief every section follows (tokens, motion rules, anatomy) |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customising
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Brand name / copy:** edit `src/content/site.ts` only; components never hard-code text.
+- **Colors:** adjust the `--color-brand-*` scale in `globals.css`; bands use `bg-brand-gradient` and `bg-ink-gradient`.
+- **Motion intensity:** `Reveal`/`Stagger` defaults are in `src/components/ui/reveal.tsx`; the hero shader `speed` and the marquee `duration` are props on those components.
+- **Form:** `cta-contact.tsx` validates client-side and shows a success state; wire `onSubmit` to your CRM or a route handler.
